@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blueshroom.harry.writingtrackerapplication.ProjectActivity">
+
+
+    <TextView
+        android:id="@+id/project_title"
+        android:text="@string/project_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/percent_completed"
+        android:text="@string/percent_completed"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/project_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="40dip"
+        android:minHeight="40dip"
+        android:minWidth="300dip"
+        android:maxWidth="300dip"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/percent_completed"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/word_count"
+        android:text="@string/word_count"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/progress_bar"
+        android:layout_alignLeft="@+id/progress_bar"
+        android:layout_alignStart="@+id/progress_bar" />
+
+    <TextView
+        android:id="@+id/word_count_goal"
+        android:text="@string/word_count_goal"
+
+        android:clickable="true"
+        android:onClick="setWordCountGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/word_count"
+        android:layout_alignStart="@+id/word_count"
+        android:layout_below="@+id/word_count"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/predicted_days"
+        android:text="@string/predicted_days"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/word_count_goal"
+        android:layout_alignStart="@+id/word_count_goal"
+        android:layout_below="@+id/word_count_goal"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/goal_days"
+        android:text="@string/goal_days"
+
+        android:clickable="true"
+        android:onClick="setGoalDays"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/predicted_days"
+        android:layout_alignStart="@+id/predicted_days"
+        android:layout_below="@+id/predicted_days"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/average_words_per_day"
+        android:text="@string/average_words_per_day"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/goal_days"
+        android:layout_alignLeft="@+id/goal_days"
+        android:layout_alignStart="@+id/goal_days" />
+
+    <TextView
+        android:id="@+id/average_words_per_day_needed_to_meet_goal"
+        android:text="@string/average_words_per_day_needed_to_meet_goal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/average_words_per_day"
+        android:layout_alignLeft="@+id/average_words_per_day"
+        android:layout_alignStart="@+id/average_words_per_day" />
+
+    <TextView
+        android:id="@+id/start_date"
+        android:text="@string/start_date"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/average_words_per_day_needed_to_meet_goal"
+        android:layout_alignLeft="@+id/average_words_per_day_needed_to_meet_goal"
+        android:layout_alignStart="@+id/average_words_per_day_needed_to_meet_goal" />
+
+    <TextView
+        android:id="@+id/largest_word_addition"
+        android:text="@string/largest_word_addition"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/start_date"
+        android:layout_alignLeft="@+id/start_date"
+        android:layout_alignStart="@+id/start_date" />
+
+    <Button
+        android:id="@+id/word_addition_button"
+        android:text="@string/word_addition_button"
+
+        android:onClick="addWords"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/progress_bar"
+        android:layout_alignEnd="@+id/progress_bar" />
+
+    <Button
+        android:id="@+id/reset_button"
+
+        android:onClick="reset"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:layout_alignBaseline="@+id/word_addition_button"
+        android:layout_alignBottom="@+id/word_addition_button"
+        android:layout_alignLeft="@+id/largest_word_addition"
+        android:layout_alignStart="@+id/largest_word_addition" />
+
+</RelativeLayout>
